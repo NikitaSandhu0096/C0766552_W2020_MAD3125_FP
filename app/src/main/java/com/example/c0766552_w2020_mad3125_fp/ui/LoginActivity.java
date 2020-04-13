@@ -1,5 +1,6 @@
 package com.example.c0766552_w2020_mad3125_fp.ui;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -28,6 +29,9 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        ActionBar actBar = getSupportActionBar();
+        actBar.setTitle("Login");
 
         edtEmail = findViewById(R.id.emailTextInputEditText);
         edtPassword = findViewById(R.id.passwordTextInputEditText);
