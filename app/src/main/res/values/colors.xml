@@ -4,4 +4,6 @@
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
     <color name="red">#cc0000</color>
+    <color name="checked">#F44330</color>
+    <color name="unchecked">#6A1B8C</color>
 </resources>

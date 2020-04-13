@@ -8,6 +8,11 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="CheckTheme">
+        <item name="colorAccent">@color/checked</item>
+        <item name="colorControlNormal">@color/unchecked</item>
+    </style>
+
 <!--    <style name="OutlinedText" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">-->
 <!--        <item name="color">@color/red</item>-->
 <!--    </style>-->
