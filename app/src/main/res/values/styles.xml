@@ -8,7 +8,7 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="CheckTheme">
+    <style name="CheckTheme">           //https://www.youtube.com/watch?v=2oGlVCn4bVo
         <item name="colorAccent">@color/checked</item>
         <item name="colorControlNormal">@color/unchecked</item>
     </style>
