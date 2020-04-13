@@ -1,7 +1,9 @@
 package com.example.c0766552_w2020_mad3125_fp.ui;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -32,8 +34,27 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if(edtEmail.getText().toString().equals("nsandhu@gmail.com") && edtPassword.getText().toString().equals("nsandhu")){
                     if (cbRemember.isChecked()){
-                        
+
                     }
+                }else {
+                    AlertDialog.Builder alert = new AlertDialog.Builder(LoginActivity.this);
+                    alert.setCancelable(false);
+                    alert.setTitle("Login Error");
+                    alert.setMessage("Invalid User ID and Password");
+                    alert.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                        }
+                    });
+                    alert.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.cancel();
+                        }
+                    });
+                    AlertDialog aDialog = alert.create();
+                    aDialog.show();
                 }
             }
         });
