@@ -11,7 +11,7 @@ public class Customer {
     private ArrayList<Bill> bills;
     private Double totalAmountToPay;
 
-    public Customer(String customerId, String firstName, String lastName, String fullName, String email, ArrayList<Bill> bills, double totalAmountToPay) {
+    public Customer(String customerId, String firstName, String lastName, String email, ArrayList<Bill> bills, double totalAmountToPay) {
         this.customerId = customerId;
         this.firstName = firstName;
         this.lastName = lastName;
