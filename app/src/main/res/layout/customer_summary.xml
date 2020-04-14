@@ -3,19 +3,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.CustomerListActivity">
+    android:layout_height="wrap_content"
+    android:backgroundTint="@android:drawable/dialog_holo_light_frame">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvCustomerList"
+    <TextView
+        android:id="@+id/txtCutomerName"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textColor="@color/checked"
+        android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Customer Name" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
