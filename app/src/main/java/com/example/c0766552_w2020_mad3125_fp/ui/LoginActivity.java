@@ -39,8 +39,8 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin = findViewById(R.id.button);
         sharedPreferences = getSharedPreferences("login", MODE_PRIVATE);
         final SharedPreferences.Editor editor = sharedPreferences.edit();
-        edtEmail.setText(sharedPreferences.getString("email",""));
-        edtPassword.setText(sharedPreferences.getString("password",""));
+        edtEmail.setText(sharedPreferences.getString("email",null));
+        edtPassword.setText(sharedPreferences.getString("password",null));
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
