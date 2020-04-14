@@ -35,10 +35,10 @@ public class CustomerListActivity extends AppCompatActivity {
             case R.id.menu1:
                 Intent intent2 = new Intent(CustomerListActivity.this, AddNewCustomerActivity.class);
                 startActivity(intent2);
-                Toast.makeText(getApplicationContext(),"Item 1 Selected",Toast.LENGTH_LONG).show();
+              //  Toast.makeText(getApplicationContext(),"Item 1 Selected",Toast.LENGTH_LONG).show();
                 return true;
             case R.id.menu2:
-                Toast.makeText(getApplicationContext(),"Item 2 Selected",Toast.LENGTH_LONG).show();
+              //  Toast.makeText(getApplicationContext(),"Item 2 Selected",Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(CustomerListActivity.this, LoginActivity.class);
                 startActivity(intent);
                 return true;
