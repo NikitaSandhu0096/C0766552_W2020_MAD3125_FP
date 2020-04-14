@@ -45,7 +45,14 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(edtEmail.getText().toString().equals("nsandhu@gmail.com") && edtPassword.getText().toString().equals("nsandhu")){
+                String email1 = edtEmail.getText().toString().trim();
+                String password1 = edtPassword.getText().toString().trim();
+
+                if(email1.isEmpty()){
+                    edtEmail.setError("Please enter email");
+                } else if(password1.isEmpty()){
+                    edtPassword.setError("Please enter password");
+                } else if(edtEmail.getText().toString().equals("nsandhu@gmail.com") && edtPassword.getText().toString().equals("nsandhu")){
                     String email = edtEmail.getText().toString();
                     String password = edtPassword.getText().toString();
                     if (cbRemember.isChecked()){
@@ -62,7 +69,7 @@ public class LoginActivity extends AppCompatActivity {
                         Intent intent = new Intent(LoginActivity.this, CustomerListActivity.class);
                         startActivity(intent);
                     }
-                }else {
+                } else {
                     AlertDialog.Builder alert = new AlertDialog.Builder(LoginActivity.this);
                     alert.setCancelable(false);
                     alert.setTitle("Login Error");
