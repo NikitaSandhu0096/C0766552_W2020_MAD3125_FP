@@ -9,14 +9,16 @@ public class Customer {
     private String fullName;
     private String email;
     private ArrayList<Bill> bills;
+    private Double totalAmountToPay;
 
-    public Customer(String customerId, String firstName, String lastName, String fullName, String email, ArrayList<Bill> bills) {
+    public Customer(String customerId, String firstName, String lastName, String fullName, String email, ArrayList<Bill> bills, double totalAmountToPay) {
         this.customerId = customerId;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.fullName = fullName;
+        this.fullName = calculateFullName();
         this.email = email;
         this.bills = bills;
+        this.totalAmountToPay = totalAmountToPay;
     }
 
     public String getCustomerId() {
@@ -66,4 +68,19 @@ public class Customer {
     public void setBills(ArrayList<Bill> bills) {
         this.bills = bills;
     }
+
+    public Double getTotalAmountToPay() {
+        return totalAmountToPay;
+    }
+
+    public void setTotalAmountToPay(Double totalAmountToPay) {
+        this.totalAmountToPay = totalAmountToPay;
+    }
+
+    private String calculateFullName(){
+        String fullName;
+        fullName = firstName + " " + lastName;
+        return fullName;
+    }
+
 }
