@@ -27,7 +27,7 @@ public class AddNewCustomerActivity extends AppCompatActivity {
         edtFirstName = findViewById(R.id.firstNameTextInputEditText);
         edtLastName = findViewById(R.id.lastNameTextInputEditText);
         edtCEmail = findViewById(R.id.customerEmailTextInputEditText);
-        btnCSave = findViewById(R.id.button2);
+        btnCSave = findViewById(R.id.customerbutton);
 
         btnCSave.setOnClickListener(new View.OnClickListener() {
             @Override
