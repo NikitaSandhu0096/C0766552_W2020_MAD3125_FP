@@ -1,5 +1,6 @@
 package com.example.c0766552_w2020_mad3125_fp.ui;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -22,6 +23,9 @@ public class AddNewCustomerActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_new_customer);
+
+        ActionBar actBar = getSupportActionBar();
+        actBar.setTitle("Add New Customer");
 
         edtCustomerID = findViewById(R.id.customerIDTextInputEditText);
         edtFirstName = findViewById(R.id.firstNameTextInputEditText);
