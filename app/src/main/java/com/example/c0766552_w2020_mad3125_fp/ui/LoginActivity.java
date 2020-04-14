@@ -36,7 +36,7 @@ public class LoginActivity extends AppCompatActivity {
         edtEmail = findViewById(R.id.emailTextInputEditText);
         edtPassword = findViewById(R.id.passwordTextInputEditText);
         cbRemember = findViewById(R.id.checkBox);
-        btnLogin = findViewById(R.id.button);
+        btnLogin = findViewById(R.id.loginbutton);
         sharedPreferences = getSharedPreferences("login", MODE_PRIVATE);
         final SharedPreferences.Editor editor = sharedPreferences.edit();
         edtEmail.setText(sharedPreferences.getString("email",null));
