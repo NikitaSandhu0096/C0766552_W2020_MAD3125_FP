@@ -1,8 +1,9 @@
 package com.example.c0766552_w2020_mad3125_fp.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Customer {
+public class Customer implements Serializable {
     private String customerId;
     private String firstName;
     private String lastName;
