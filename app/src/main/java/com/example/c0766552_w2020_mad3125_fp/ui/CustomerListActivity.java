@@ -33,6 +33,8 @@ public class CustomerListActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
             case R.id.menu1:
+                Intent intent2 = new Intent(CustomerListActivity.this, AddNewCustomerActivity.class);
+                startActivity(intent2);
                 Toast.makeText(getApplicationContext(),"Item 1 Selected",Toast.LENGTH_LONG).show();
                 return true;
             case R.id.menu2:
