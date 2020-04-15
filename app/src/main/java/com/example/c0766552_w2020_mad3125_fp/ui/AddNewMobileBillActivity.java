@@ -1,9 +1,11 @@
 package com.example.c0766552_w2020_mad3125_fp.ui;
 
 import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -89,9 +91,28 @@ public class AddNewMobileBillActivity extends AppCompatActivity {
                     edtMInternetUsage.setError("Please enter Internet Usage");
                 } else if(minutesUsage.isEmpty()){
                     edtMinutesUsage.setError("Please enter Minutes Usage");
-                } else {
+                } else if(edtMobileNumber.getText().toString().matches("[0-9]{10}")) {      //https://stackoverflow.com/questions/27998409/email-phone-validation-in-swift
                     Intent mint = new Intent(AddNewMobileBillActivity.this, CustomerDetailsActivity.class);
                     startActivity(mint);
+                } else {
+                    AlertDialog.Builder alert = new AlertDialog.Builder(AddNewMobileBillActivity.this);
+                    alert.setCancelable(false);
+                    alert.setTitle("New Mobile Bill Creation Error");
+                    alert.setMessage("Invalid Mobile Number");
+                    alert.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                        }
+                    });
+                    alert.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.cancel();
+                        }
+                    });
+                    AlertDialog aDialog = alert.create();
+                    aDialog.show();
                 }
             }
         });
