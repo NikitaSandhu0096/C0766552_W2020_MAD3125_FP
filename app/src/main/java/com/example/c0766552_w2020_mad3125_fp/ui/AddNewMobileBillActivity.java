@@ -91,7 +91,7 @@ public class AddNewMobileBillActivity extends AppCompatActivity {
                     edtMInternetUsage.setError("Please enter Internet Usage");
                 } else if(minutesUsage.isEmpty()){
                     edtMinutesUsage.setError("Please enter Minutes Usage");
-                } else if(edtMobileNumber.getText().toString().matches("[0-9]{10}")) {      //https://stackoverflow.com/questions/27998409/email-phone-validation-in-swift
+                } else if(edtMobileNumber.getText().toString().matches("[0-9]{10}")) {      //https://stackoverflow.com/questions/19395503/regular-expression-for-10-digits-or-11-digits
                     Intent mint = new Intent(AddNewMobileBillActivity.this, CustomerDetailsActivity.class);
                     startActivity(mint);
                 } else {
