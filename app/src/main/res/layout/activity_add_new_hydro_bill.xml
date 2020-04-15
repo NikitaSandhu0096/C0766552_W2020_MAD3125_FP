@@ -76,7 +76,7 @@
         app:layout_constraintTop_toBottomOf="@+id/hydroAgencyNameTextInputLayout">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/customerEmailTextInputEditText"
+            android:id="@+id/hydroUnitConsumedTextInputEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Unit Consumed" />
