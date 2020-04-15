@@ -12,3 +12,5 @@ https://javatpoint.com/android-option-menu-example
 https://www.journaldev.com/9976/android-date-time-picker-dialog
 
 https://android--code.blogspot.com/2015/08/android-datepickerdialog-date-format.html
+
+https://stackoverflow.com/questions/27998409/email-phone-validation-in-swift
