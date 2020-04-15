@@ -16,10 +16,10 @@ import com.example.c0766552_w2020_mad3125_fp.ui.CustomerDetailsActivity;
 import java.util.ArrayList;
 
 public class CustomerListInfoActivity extends RecyclerView.Adapter<CustomerListInfoActivity.CustomerViewHolder> {
-    private ArrayList<Customer> customerDetailsArrayList;
+    private ArrayList<Customer> customersArrayList;
 
-    public CustomerListInfoActivity(ArrayList<Customer> customerDetailsArrayList) {
-        this.customerDetailsArrayList = customerDetailsArrayList;
+    public CustomerListInfoActivity(ArrayList<Customer> customersArrayList) {
+        this.customersArrayList = customersArrayList;
     }
 
     @NonNull
@@ -32,13 +32,13 @@ public class CustomerListInfoActivity extends RecyclerView.Adapter<CustomerListI
 
     @Override
     public void onBindViewHolder(@NonNull final CustomerListInfoActivity.CustomerViewHolder holder, final int position) {
-        Customer mCustomer = this.customerDetailsArrayList.get(position);
+        Customer mCustomer = this.customersArrayList.get(position);
         holder.txtCustomerName.setText(mCustomer.getFullName());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Customer cust = customerDetailsArrayList.get(position);
+                Customer cust = customersArrayList.get(position);
                 Intent sint = new Intent(holder.itemView.getContext(), CustomerDetailsActivity.class);
                 sint.putExtra("customers", cust);
                 holder.itemView.getContext().startActivity(sint);
@@ -48,7 +48,7 @@ public class CustomerListInfoActivity extends RecyclerView.Adapter<CustomerListI
 
     @Override
     public int getItemCount() {
-        return this.customerDetailsArrayList.size();
+        return this.customersArrayList.size();
     }
 
     public class CustomerViewHolder extends RecyclerView.ViewHolder{

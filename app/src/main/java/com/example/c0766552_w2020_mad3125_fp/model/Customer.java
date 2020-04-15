@@ -12,7 +12,7 @@ public class Customer implements Serializable {
     private ArrayList<Bill> bills;
     private Double totalAmountToPay;
 
-    public Customer(String customerId, String firstName, String lastName, String email, ArrayList<Bill> bills, double totalAmountToPay) {
+    public Customer(String customerId, String firstName, String lastName, String email) {
         this.customerId = customerId;
         this.firstName = firstName;
         this.lastName = lastName;

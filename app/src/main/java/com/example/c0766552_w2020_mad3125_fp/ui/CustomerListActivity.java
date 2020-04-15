@@ -2,6 +2,8 @@ package com.example.c0766552_w2020_mad3125_fp.ui;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,8 +12,16 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.example.c0766552_w2020_mad3125_fp.R;
+import com.example.c0766552_w2020_mad3125_fp.adapters.CustomerListInfoActivity;
+import com.example.c0766552_w2020_mad3125_fp.model.Customer;
+
+import java.util.ArrayList;
 
 public class CustomerListActivity extends AppCompatActivity {
+
+    private RecyclerView rvCustomersList;
+    private ArrayList<Customer> customers;
+    private CustomerListInfoActivity customersAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +30,22 @@ public class CustomerListActivity extends AppCompatActivity {
 
         ActionBar actBar = getSupportActionBar();
         actBar.setTitle("Customer List");
+
+        rvCustomersList = findViewById(R.id.rvCustomersList);
+
+        customersInfo();
+
+        customersAdapter = new CustomerListInfoActivity(customers);
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
+
+        rvCustomersList.setLayoutManager(mLayoutManager);
+
+        rvCustomersList.setAdapter(customersAdapter);
+    }
+
+    private void customersInfo(){
+        customers = new ArrayList<>();
+       // customers.add(new Customer("1", "Nikita", "Sandhu", "ns@g.com"));
     }
 
     @Override
