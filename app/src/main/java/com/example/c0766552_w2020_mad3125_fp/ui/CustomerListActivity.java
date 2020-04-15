@@ -45,7 +45,9 @@ public class CustomerListActivity extends AppCompatActivity {
 
     private void customersInfo(){
         customers = new ArrayList<>();
-       // customers.add(new Customer("1", "Nikita", "Sandhu", "ns@g.com"));
+        customers.add(new Customer("C0001","Nikita","Sandhu","nsandhu@gmail.com"));
+        customers.add(new Customer("C0002","Kashyap","Jhaveri","kjhaveri@yahoo.com"));
+        customers.add(new Customer("C0003","Kamalpreet","Kaur","kkaur@yahoo.com"));
     }
 
     @Override
