@@ -39,12 +39,12 @@ public class AddNewMobileBillActivity extends AppCompatActivity {
         edtMBillID = findViewById(R.id.mobileBillIDTextInputEditText);
         edtMBillDate = findViewById(R.id.mobileBillDateTextInputEditText);
 
-        edtMBillDate.setOnClickListener(new View.OnClickListener() {
+        edtMBillDate.setOnClickListener(new View.OnClickListener() {        //https://www.journaldev.com/9976/android-date-time-picker-dialog
             @Override
             public void onClick(View v) {
                 DatePickerDialog dialog = new DatePickerDialog(AddNewMobileBillActivity.this, new DatePickerDialog.OnDateSetListener() {
                     @Override
-                    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {       //https://android--code.blogspot.com/2015/08/android-datepickerdialog-date-format.html
                         Calendar calendar = Calendar.getInstance();
                         calendar.set(year, month, dayOfMonth);
                         Date date = calendar.getTime();
