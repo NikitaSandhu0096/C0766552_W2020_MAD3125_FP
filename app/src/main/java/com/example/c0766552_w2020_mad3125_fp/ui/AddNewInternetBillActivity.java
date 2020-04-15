@@ -3,7 +3,9 @@ package com.example.c0766552_w2020_mad3125_fp.ui;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 
 import com.example.c0766552_w2020_mad3125_fp.R;
@@ -31,6 +33,27 @@ public class AddNewInternetBillActivity extends AppCompatActivity {
         edtIInternetUsage = findViewById(R.id.internetInternetUsageTextInputEditText);
         btnISave = findViewById(R.id.internetbutton);
 
-        
+        btnISave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String iID = edtIBillID.getText().toString().trim();
+                String iBillDate = edtIBillDate.getText().toString().trim();
+                String providerName = edtProviderName.getText().toString().trim();
+                String iInternetUsage = edtIInternetUsage.getText().toString().trim();
+
+                if(iID.isEmpty()){
+                    edtIBillID.setError("Please enter Bill ID");
+                } else if(iBillDate.isEmpty()){
+                    edtIBillDate.setError("Please enter Bill Date");
+                } else if(providerName.isEmpty()){
+                    edtProviderName.setError("Please enter Provider Name");
+                } else if(iInternetUsage.isEmpty()){
+                    edtIInternetUsage.setError("Please enter Internet Usage");
+                } else {
+                    Intent iint = new Intent(AddNewInternetBillActivity.this, CustomerDetailsActivity.class);
+                    startActivity(iint);
+                }
+            }
+        });
     }
 }
