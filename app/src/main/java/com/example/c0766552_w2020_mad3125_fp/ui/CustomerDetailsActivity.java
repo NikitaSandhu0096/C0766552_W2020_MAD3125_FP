@@ -1,5 +1,6 @@
 package com.example.c0766552_w2020_mad3125_fp.ui;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -19,6 +20,9 @@ public class CustomerDetailsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customer_details);
+
+        ActionBar actBar = getSupportActionBar();
+        actBar.setTitle("Customer's Details");
 
         txtCustomerId = findViewById(R.id.textView5);
         txtFullName = findViewById(R.id.textView6);
