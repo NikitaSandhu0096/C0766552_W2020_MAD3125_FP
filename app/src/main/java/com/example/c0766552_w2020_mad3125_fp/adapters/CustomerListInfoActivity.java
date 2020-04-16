@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.c0766552_w2020_mad3125_fp.R;
 import com.example.c0766552_w2020_mad3125_fp.model.Customer;
-import com.example.c0766552_w2020_mad3125_fp.ui.CustomerDetailsActivity;
+import com.example.c0766552_w2020_mad3125_fp.ui.ShowBillDetailsActivity;
 
 import java.util.ArrayList;
 
@@ -39,7 +39,7 @@ public class CustomerListInfoActivity extends RecyclerView.Adapter<CustomerListI
             @Override
             public void onClick(View v) {
                 Customer cust = customersArrayList.get(position);
-                Intent sint = new Intent(holder.itemView.getContext(), CustomerDetailsActivity.class);
+                Intent sint = new Intent(holder.itemView.getContext(), ShowBillDetailsActivity.class);
                 sint.putExtra("customers", cust);
                 holder.itemView.getContext().startActivity(sint);
             }

@@ -75,7 +75,7 @@ public class AddNewInternetBillActivity extends AppCompatActivity {
                 } else if(iInternetUsage.isEmpty()){
                     edtIInternetUsage.setError("Please enter Internet Usage");
                 } else {
-                    Intent iint = new Intent(AddNewInternetBillActivity.this, CustomerDetailsActivity.class);
+                    Intent iint = new Intent(AddNewInternetBillActivity.this, ShowBillDetailsActivity.class);
                     startActivity(iint);
                 }
             }

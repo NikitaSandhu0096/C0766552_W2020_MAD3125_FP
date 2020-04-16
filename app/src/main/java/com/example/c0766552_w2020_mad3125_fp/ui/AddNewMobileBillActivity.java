@@ -92,7 +92,7 @@ public class AddNewMobileBillActivity extends AppCompatActivity {
                 } else if(minutesUsage.isEmpty()){
                     edtMinutesUsage.setError("Please enter Minutes Usage");
                 } else if(edtMobileNumber.getText().toString().matches("[0-9]{10}")) {      //https://stackoverflow.com/questions/19395503/regular-expression-for-10-digits-or-11-digits
-                    Intent mint = new Intent(AddNewMobileBillActivity.this, CustomerDetailsActivity.class);
+                    Intent mint = new Intent(AddNewMobileBillActivity.this, ShowBillDetailsActivity.class);
                     startActivity(mint);
                 } else {
                     AlertDialog.Builder alert = new AlertDialog.Builder(AddNewMobileBillActivity.this);

@@ -75,7 +75,7 @@ public class AddNewHydroBillActivity extends AppCompatActivity {
                 } else if(unitConsumed.isEmpty()){
                     edtUnitConsumed.setError("Please enter Unit Consumed");
                 } else {
-                    Intent hint = new Intent(AddNewHydroBillActivity.this, CustomerDetailsActivity.class);
+                    Intent hint = new Intent(AddNewHydroBillActivity.this, ShowBillDetailsActivity.class);
                     startActivity(hint);
                 }
             }
