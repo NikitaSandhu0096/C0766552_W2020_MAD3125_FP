@@ -14,8 +14,10 @@ import android.widget.Toast;
 import com.example.c0766552_w2020_mad3125_fp.R;
 import com.example.c0766552_w2020_mad3125_fp.adapters.CustomerListInfoActivity;
 import com.example.c0766552_w2020_mad3125_fp.model.Customer;
+import com.example.c0766552_w2020_mad3125_fp.util.DataStorage;
 
 import java.util.ArrayList;
+import java.util.Collection;
 
 public class CustomerListActivity extends AppCompatActivity {
 
@@ -44,10 +46,12 @@ public class CustomerListActivity extends AppCompatActivity {
     }
 
     private void customersInfo(){
+        DataStorage.getInstance().loadDetails();
         customers = new ArrayList<>();
-        customers.add(new Customer("C0001","Nikita","Sandhu","nsandhu@gmail.com"));
-        customers.add(new Customer("C0002","Kashyap","Jhaveri","kjhaveri@yahoo.com"));
-        customers.add(new Customer("C0003","Kamalpreet","Kaur","kkaur@yahoo.com"));
+        ArrayList<Customer> customerArrayList = new ArrayList<>(DataStorage.getInstance().getCustomer());
+//        customers.add(new Customer("C0001","Nikita","Sandhu","nsandhu@gmail.com"));
+//        customers.add(new Customer("C0002","Kashyap","Jhaveri","kjhaveri@yahoo.com"));
+//        customers.add(new Customer("C0003","Kamalpreet","Kaur","kkaur@yahoo.com"));
     }
 
     @Override
