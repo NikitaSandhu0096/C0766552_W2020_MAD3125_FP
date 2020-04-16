@@ -18,8 +18,8 @@ public class Customer implements Serializable {
         this.lastName = lastName;
         this.fullName = calculateFullName();
         this.email = email;
-        this.bills = bills;
-        this.totalAmountToPay = totalAmountToPay;
+//        this.bills = bills;
+//        this.totalAmountToPay = totalAmountToPay;
     }
 
     public String getCustomerId() {
