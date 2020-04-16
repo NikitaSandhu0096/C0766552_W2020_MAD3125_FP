@@ -13,6 +13,7 @@ import android.widget.DatePicker;
 import com.example.c0766552_w2020_mad3125_fp.R;
 import com.google.android.material.textfield.TextInputEditText;
 
+import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -21,6 +22,7 @@ public class AddNewInternetBillActivity extends AppCompatActivity {
 
     private TextInputEditText edtIBillID;
     private TextInputEditText edtIBillDate;
+    private TextInputEditText edtIBillAmount;
     private TextInputEditText edtProviderName;
     private TextInputEditText edtIInternetUsage;
     private Button btnISave;
@@ -54,6 +56,7 @@ public class AddNewInternetBillActivity extends AppCompatActivity {
             }
         });
 
+        edtIBillAmount = findViewById(R.id.internetBillAmountTextInputEditText);
         edtProviderName = findViewById(R.id.internetProviderNameTextInputEditText);
         edtIInternetUsage = findViewById(R.id.internetInternetUsageTextInputEditText);
         btnISave = findViewById(R.id.internetbutton);
@@ -63,6 +66,7 @@ public class AddNewInternetBillActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String iID = edtIBillID.getText().toString().trim();
                 String iBillDate = edtIBillDate.getText().toString().trim();
+                String iBillAmount = edtIBillAmount.getText().toString().trim();
                 String providerName = edtProviderName.getText().toString().trim();
                 String iInternetUsage = edtIInternetUsage.getText().toString().trim();
 
@@ -70,6 +74,8 @@ public class AddNewInternetBillActivity extends AppCompatActivity {
                     edtIBillID.setError("Please enter Bill ID");
                 } else if(iBillDate.isEmpty()){
                     edtIBillDate.setError("Please enter Bill Date");
+                } else if(iBillAmount.isEmpty()){
+                    edtIBillAmount.setError("Please enter Bill Amount");
                 } else if(providerName.isEmpty()){
                     edtProviderName.setError("Please enter Provider Name");
                 } else if(iInternetUsage.isEmpty()){

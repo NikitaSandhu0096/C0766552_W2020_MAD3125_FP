@@ -13,6 +13,7 @@ import android.widget.DatePicker;
 import com.example.c0766552_w2020_mad3125_fp.R;
 import com.google.android.material.textfield.TextInputEditText;
 
+import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -21,6 +22,7 @@ public class AddNewHydroBillActivity extends AppCompatActivity {
 
     private TextInputEditText edtHBillID;
     private TextInputEditText edtHBillDate;
+    private TextInputEditText edtHBillAmount;
     private TextInputEditText edtAgencyName;
     private TextInputEditText edtUnitConsumed;
     private Button btnHSave;
@@ -54,6 +56,7 @@ public class AddNewHydroBillActivity extends AppCompatActivity {
             }
         });
 
+        edtHBillAmount = findViewById(R.id.hydroBillAmountTextInputEditText);
         edtAgencyName = findViewById(R.id.hydroAgencyNameTextInputEditText);
         edtUnitConsumed = findViewById(R.id.hydroUnitConsumedTextInputEditText);
         btnHSave = findViewById(R.id.hydrobutton);
@@ -63,6 +66,7 @@ public class AddNewHydroBillActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String hID = edtHBillID.getText().toString().trim();
                 String hBillDate = edtHBillDate.getText().toString().trim();
+                String hBillAmount = edtHBillAmount.getText().toString().trim();
                 String agencyName = edtAgencyName.getText().toString().trim();
                 String unitConsumed = edtUnitConsumed.getText().toString().trim();
 
@@ -70,6 +74,8 @@ public class AddNewHydroBillActivity extends AppCompatActivity {
                     edtHBillID.setError("Please enter Bill ID");
                 } else if(hBillDate.isEmpty()){
                     edtHBillDate.setError("Please enter Bill Date");
+                } else if(hBillAmount.isEmpty()){
+                    edtHBillAmount.setError("Please enter Bill Amount");
                 } else if(agencyName.isEmpty()){
                     edtAgencyName.setError("Please enter Agency Name");
                 } else if(unitConsumed.isEmpty()){
