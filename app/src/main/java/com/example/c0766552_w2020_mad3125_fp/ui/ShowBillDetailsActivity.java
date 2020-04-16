@@ -51,7 +51,7 @@ public class ShowBillDetailsActivity extends AppCompatActivity {
 
 //        rvBillsList = findViewById(R.id.rvBillsList);
 //
-//        billsInfo();
+//      //  billsInfo();
 //
 //        billsAdapter = new BillListInfoActivity(bills);
 //        RecyclerView.LayoutManager mLayoutManager1 = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
@@ -64,7 +64,7 @@ public class ShowBillDetailsActivity extends AppCompatActivity {
 //    private void billsInfo(){
 //        DataStorage.getInstance().loadDetails();
 //        //bills = new ArrayList<>(DataStorage.getInstance().getCustomer());
-//
+
 //    }
 
     @Override

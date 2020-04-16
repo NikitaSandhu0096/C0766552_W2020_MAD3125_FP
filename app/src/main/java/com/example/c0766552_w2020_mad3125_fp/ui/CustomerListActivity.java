@@ -46,7 +46,9 @@ public class CustomerListActivity extends AppCompatActivity {
 
     private void customersInfo(){
         DataStorage.getInstance().loadDetails();
+
         customers = new ArrayList<>(DataStorage.getInstance().getCustomer());
+
 //        customers.add(new Customer("C0001","Nikita","Sandhu","nsandhu@gmail.com"));
 //        customers.add(new Customer("C0002","Kashyap","Jhaveri","kjhaveri@yahoo.com"));
 //        customers.add(new Customer("C0003","Kamalpreet","Kaur","kkaur@yahoo.com"));
