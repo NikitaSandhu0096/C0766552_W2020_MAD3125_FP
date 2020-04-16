@@ -1,5 +1,6 @@
 package com.example.c0766552_w2020_mad3125_fp.util;
 
+import com.example.c0766552_w2020_mad3125_fp.model.Bill;
 import com.example.c0766552_w2020_mad3125_fp.model.Customer;
 
 import java.util.ArrayList;
@@ -7,6 +8,7 @@ import java.util.ArrayList;
 public class DataStorage {
     private static DataStorage dataStorage = new DataStorage();
     private ArrayList<Customer> customer = new ArrayList<>();
+    private ArrayList<Bill> bill = new ArrayList<>();
 
     public DataStorage() {
     }

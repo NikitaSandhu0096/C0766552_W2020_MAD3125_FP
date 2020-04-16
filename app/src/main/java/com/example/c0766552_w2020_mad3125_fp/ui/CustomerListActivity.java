@@ -17,7 +17,6 @@ import com.example.c0766552_w2020_mad3125_fp.model.Customer;
 import com.example.c0766552_w2020_mad3125_fp.util.DataStorage;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
 public class CustomerListActivity extends AppCompatActivity {
 

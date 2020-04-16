@@ -11,9 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.c0766552_w2020_mad3125_fp.R;
 import com.example.c0766552_w2020_mad3125_fp.model.Bill;
-import com.example.c0766552_w2020_mad3125_fp.model.Customer;
 import com.example.c0766552_w2020_mad3125_fp.ui.BillInfoActivity;
-import com.example.c0766552_w2020_mad3125_fp.ui.ShowBillDetailsActivity;
 
 import java.util.ArrayList;
 
@@ -26,9 +24,9 @@ public class BillListInfoActivity extends RecyclerView.Adapter<BillListInfoActiv
 
     @NonNull
     @Override
-    public BillListInfoActivity.BillViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View mView = LayoutInflater.from(parent.getContext()).inflate(R.layout.bill_summary, parent, false);
-        BillViewHolder mBillViewHolder = new BillViewHolder(mView);
+    public BillViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View mView1 = LayoutInflater.from(parent.getContext()).inflate(R.layout.bill_summary, parent, false);
+        BillViewHolder mBillViewHolder = new BillViewHolder(mView1);
         return mBillViewHolder;
     }
 
