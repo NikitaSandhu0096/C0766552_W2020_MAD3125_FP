@@ -48,6 +48,7 @@ public class ShowBillDetailsActivity extends AppCompatActivity {
         txtCustomerId.setText(tempobj.getCustomerId());
         txtFullName.setText(tempobj.getFullName());
         txtEmail.setText(tempobj.getEmail());
+        //txtTotalAmountToPay.setText(tempobj.getTotalAmountToPay());
 
         bills = tempobj.getAllBills();
 

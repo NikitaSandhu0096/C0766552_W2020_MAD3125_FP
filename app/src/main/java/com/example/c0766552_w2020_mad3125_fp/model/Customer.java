@@ -29,7 +29,7 @@ public class Customer implements Serializable {
         totalAmountToPay = totalAmountToPay + bill.getTotalBillAmount();
     }
 
-    public ArrayList<Bill> getAllBills(){
+    public ArrayList<Bill> getAllBills(){       //http://mandarshinde.com/convert-hashmap-arraylist/
         Collection<Bill> collection = bills.values();
         ArrayList<Bill> billArrayList = new ArrayList<Bill>(collection);
         return billArrayList;
