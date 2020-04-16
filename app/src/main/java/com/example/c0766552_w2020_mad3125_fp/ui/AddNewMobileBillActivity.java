@@ -23,6 +23,7 @@ public class AddNewMobileBillActivity extends AppCompatActivity {
 
     private TextInputEditText edtMBillID;
     private TextInputEditText edtMBillDate;
+    private TextInputEditText edtMBillAmount;
     private TextInputEditText edtManufacturerName;
     private TextInputEditText edtPlanName;
     private TextInputEditText edtMobileNumber;
@@ -59,6 +60,7 @@ public class AddNewMobileBillActivity extends AppCompatActivity {
             }
         });
 
+        edtMBillAmount = findViewById(R.id.mobileBillAmountTextInputEditText);
         edtManufacturerName = findViewById(R.id.mobileManufacturerNameTextInputEditText);
         edtPlanName = findViewById(R.id.mobilePlanNameTextInputEditText);
         edtMobileNumber = findViewById(R.id.mobileMobileNumberTextInputEditText);
@@ -71,6 +73,7 @@ public class AddNewMobileBillActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String mID = edtMBillID.getText().toString().trim();
                 String mBillDate = edtMBillDate.getText().toString().trim();
+                String mBillAmount = edtMBillAmount.getText().toString().trim();
                 String manufacturerName = edtManufacturerName.getText().toString().trim();
                 String planName = edtPlanName.getText().toString().trim();
                 String mobileNumber = edtMobileNumber.getText().toString().trim();
@@ -81,6 +84,8 @@ public class AddNewMobileBillActivity extends AppCompatActivity {
                     edtMBillID.setError("Please enter Bill ID");
                 } else if(mBillDate.isEmpty()){
                     edtMBillDate.setError("Please enter Bill Date");
+                } else if(mBillAmount.isEmpty()){
+                    edtMBillAmount.setError("Please enter Bill Amount");
                 } else if(manufacturerName.isEmpty()){
                     edtManufacturerName.setError("Please enter Manufacturer Name");
                 } else if(planName.isEmpty()){
