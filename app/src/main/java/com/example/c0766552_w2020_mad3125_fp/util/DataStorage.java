@@ -38,6 +38,12 @@ public class DataStorage {
 
         Mobile mobile = new Mobile("MOBB0001","11-Jun-2019", 187.60,"Samsung", "LTE+3G 9.5GB Promo", "9753186420", 4, 230);
 
+        customer1.addBill(internet1.getBillId(), internet1);
+        customer1.addBill(hydro1.getBillId(), hydro1);
+        customer1.addBill(mobile.getBillId(), mobile);
+        customer2.addBill(internet2.getBillId(), internet2);
+        customer2.addBill(hydro2.getBillId(), hydro2);
+        customer3.addBill(internet3.getBillId(), internet3);
         customer.add(customer1);
         customer.add(customer2);
         customer.add(customer3);

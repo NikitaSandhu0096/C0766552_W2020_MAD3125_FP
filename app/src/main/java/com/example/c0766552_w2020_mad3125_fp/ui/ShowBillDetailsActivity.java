@@ -49,16 +49,18 @@ public class ShowBillDetailsActivity extends AppCompatActivity {
         txtFullName.setText(tempobj.getFullName());
         txtEmail.setText(tempobj.getEmail());
 
-//        rvBillsList = findViewById(R.id.rvBillsList);
-//
-//      //  billsInfo();
-//
-//        billsAdapter = new BillListInfoActivity(bills);
-//        RecyclerView.LayoutManager mLayoutManager1 = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
-//
-//        rvBillsList.setLayoutManager(mLayoutManager1);
-//
-//        rvBillsList.setAdapter(billsAdapter);
+        bills = tempobj.getAllBills();
+
+        rvBillsList = findViewById(R.id.rvBillsList);
+
+      //  billsInfo();
+
+        billsAdapter = new BillListInfoActivity(bills);
+        RecyclerView.LayoutManager mLayoutManager1 = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
+
+        rvBillsList.setLayoutManager(mLayoutManager1);
+
+        rvBillsList.setAdapter(billsAdapter);
     }
 
 //    private void billsInfo(){

@@ -2,6 +2,8 @@ package com.example.c0766552_w2020_mad3125_fp.model;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
 
 public class Customer implements Serializable {
     private String customerId;
@@ -9,8 +11,8 @@ public class Customer implements Serializable {
     private String lastName;
     private String fullName;
     private String email;
-    private ArrayList<Bill> bills;
-    private Double totalAmountToPay;
+    private HashMap<String, Bill> bills = new HashMap<>();
+    private Double totalAmountToPay = 0.0;
 
     public Customer(String customerId, String firstName, String lastName, String email) {
         this.customerId = customerId;
@@ -20,6 +22,17 @@ public class Customer implements Serializable {
         this.email = email;
 //        this.bills = bills;
 //        this.totalAmountToPay = totalAmountToPay;
+    }
+
+    public void addBill(String billId, Bill bill){
+        this.bills.put(billId,bill);
+        totalAmountToPay = totalAmountToPay + bill.getTotalBillAmount();
+    }
+
+    public ArrayList<Bill> getAllBills(){
+        Collection<Bill> collection = bills.values();
+        ArrayList<Bill> billArrayList = new ArrayList<Bill>(collection);
+        return billArrayList;
     }
 
     public String getCustomerId() {
@@ -62,11 +75,11 @@ public class Customer implements Serializable {
         this.email = email;
     }
 
-    public ArrayList<Bill> getBills() {
+    public HashMap<String, Bill> getBills() {
         return bills;
     }
 
-    public void setBills(ArrayList<Bill> bills) {
+    public void setBills(HashMap<String, Bill> bills) {
         this.bills = bills;
     }
 
@@ -83,5 +96,6 @@ public class Customer implements Serializable {
         fullName = firstName + " " + lastName;
         return fullName;
     }
+
 
 }
