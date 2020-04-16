@@ -16,3 +16,5 @@ https://android--code.blogspot.com/2015/08/android-datepickerdialog-date-format.
 https://stackoverflow.com/questions/19395503/regular-expression-for-10-digits-or-11-digits
 
 https://stackoverflow.com/questions/43747709/how-to-obtain-a-regular-expression-for-validation-email-address-for-one-domain-o
+
+http://mandarshinde.com/convert-hashmap-arraylist/
