@@ -35,7 +35,7 @@ public class BillListInfoActivity extends RecyclerView.Adapter<BillListInfoActiv
         Bill mBill = this.billsArrayList.get(position);
         holder.txtBillType.setText("Bill Type : " + mBill.getBillType());
         holder.txtBillDate.setText("Bill Date : " + mBill.getBillDate());
-        holder.txtBillAmount.setText(mBill.getTotalBillAmount().toString());
+        holder.txtBillAmount.setText("Bill Amount : " + mBill.getTotalBillAmount().toString());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
