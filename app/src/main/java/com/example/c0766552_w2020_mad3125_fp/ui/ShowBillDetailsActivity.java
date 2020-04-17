@@ -43,12 +43,12 @@ public class ShowBillDetailsActivity extends AppCompatActivity {
         txtEmail = findViewById(R.id.textView7);
         txtTotalAmountToPay = findViewById(R.id.textView8);
 
-        Customer tempobj = (Customer) getIntent().getSerializableExtra("customers");
+        Customer tempobj = DataStorage.getInstance().getCustomer().get(getIntent().getIntExtra("customerSelected",0));
 
         txtCustomerId.setText(tempobj.getCustomerId());
         txtFullName.setText(tempobj.getFullName());
         txtEmail.setText(tempobj.getEmail());
-        //txtTotalAmountToPay.setText(tempobj.getTotalAmountToPay());
+        txtTotalAmountToPay.setText(tempobj.getTotalAmountToPay().toString());
 
         bills = tempobj.getAllBills();
 

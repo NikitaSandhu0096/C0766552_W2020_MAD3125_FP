@@ -32,15 +32,15 @@ public class CustomerListInfoActivity extends RecyclerView.Adapter<CustomerListI
 
     @Override
     public void onBindViewHolder(@NonNull final CustomerListInfoActivity.CustomerViewHolder holder, final int position) {
-        Customer mCustomer = this.customersArrayList.get(position);
+        final Customer mCustomer = this.customersArrayList.get(position);
         holder.txtCustomerName.setText(mCustomer.getFullName());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Customer cust = customersArrayList.get(position);
+                //Customer cust = customersArrayList.get(position);
                 Intent sint = new Intent(holder.itemView.getContext(), ShowBillDetailsActivity.class);
-                sint.putExtra("customers", cust);
+                sint.putExtra("customerSelected", position);
                 holder.itemView.getContext().startActivity(sint);
             }
         });
