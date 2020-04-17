@@ -7,11 +7,13 @@ import com.example.c0766552_w2020_mad3125_fp.model.Internet;
 import com.example.c0766552_w2020_mad3125_fp.model.Mobile;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
 
 public class DataStorage {
     private static DataStorage dataStorage = new DataStorage();
-    private ArrayList<Customer> customer = new ArrayList<>();
-    private ArrayList<Bill> bill = new ArrayList<>();
+    //private ArrayList<Customer> customer = new ArrayList<>();
+    private HashMap<String, Customer> customers = new HashMap<>();
 
     public DataStorage() {
     }
@@ -20,8 +22,14 @@ public class DataStorage {
         return dataStorage;
     }
 
-    public ArrayList<Customer> getCustomer(){
-        return this.customer;
+    public void addCustomer(String customerId, Customer customer1){
+        this.customers.put(customerId,customer1);
+    }
+
+    public ArrayList<Customer> getCustomer(){       // //http://mandarshinde.com/convert-hashmap-arraylist/
+        Collection<Customer> collection = customers.values();
+        ArrayList<Customer> customerArrayList = new ArrayList<Customer>(collection);
+        return customerArrayList;
     }
 
     public void loadDetails(){
@@ -44,8 +52,13 @@ public class DataStorage {
         customer2.addBill(internet2.getBillId(), internet2);
         customer2.addBill(hydro2.getBillId(), hydro2);
         customer3.addBill(internet3.getBillId(), internet3);
-        customer.add(customer1);
-        customer.add(customer2);
-        customer.add(customer3);
+
+        addCustomer(customer1.getCustomerId(), customer1);
+        addCustomer(customer2.getCustomerId(), customer2);
+        addCustomer(customer3.getCustomerId(), customer3);
+
+//        customer.add(customer1);
+//        customer.add(customer2);
+//        customer.add(customer3);
     }
 }

@@ -15,6 +15,7 @@ import android.widget.CompoundButton;
 import android.widget.Toast;
 
 import com.example.c0766552_w2020_mad3125_fp.R;
+import com.example.c0766552_w2020_mad3125_fp.util.DataStorage;
 import com.google.android.material.textfield.TextInputEditText;
 
 public class LoginActivity extends AppCompatActivity {
