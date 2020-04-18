@@ -11,6 +11,9 @@ import android.widget.Button;
 import android.widget.DatePicker;
 
 import com.example.c0766552_w2020_mad3125_fp.R;
+import com.example.c0766552_w2020_mad3125_fp.model.Customer;
+import com.example.c0766552_w2020_mad3125_fp.model.Hydro;
+import com.example.c0766552_w2020_mad3125_fp.util.DataStorage;
 import com.google.android.material.textfield.TextInputEditText;
 
 import java.io.Serializable;
@@ -81,6 +84,7 @@ public class AddNewHydroBillActivity extends AppCompatActivity {
                 } else if(unitConsumed.isEmpty()){
                     edtUnitConsumed.setError("Please enter Unit Consumed");
                 } else {
+                    Hydro hydro = new Hydro(hID,hBillDate,Double.parseDouble("hBillAmount"),agencyName,Integer.parseInt("unitConsumed"));
                     Intent hint = new Intent(AddNewHydroBillActivity.this, ShowBillDetailsActivity.class);
                     startActivity(hint);
                 }
