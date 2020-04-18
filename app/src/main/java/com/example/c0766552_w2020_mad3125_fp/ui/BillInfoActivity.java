@@ -22,6 +22,12 @@ public class BillInfoActivity extends AppCompatActivity {
     private TextView txtDetail4;
     private TextView txtDetail5;
 
+    private TextView txtDetail11;
+    private TextView txtDetail21;
+    private TextView txtDetail31;
+    private TextView txtDetail41;
+    private TextView txtDetail51;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,34 +38,57 @@ public class BillInfoActivity extends AppCompatActivity {
 
         Bill tempbill = (Bill) getIntent().getSerializableExtra("bills");
 
-        txtBillId = findViewById(R.id.textView10);
-        txtBillDate = findViewById(R.id.textView11);
-        txtBillType = findViewById(R.id.textView12);
-        txtBillAmount = findViewById(R.id.textView13);
+        txtBillId = findViewById(R.id.textView19);
+        txtBillDate = findViewById(R.id.textView20);
+        txtBillType = findViewById(R.id.textView21);
+        txtBillAmount = findViewById(R.id.textView22);
         txtDetail1 = findViewById(R.id.textView14);
         txtDetail2 = findViewById(R.id.textView15);
         txtDetail3 = findViewById(R.id.textView16);
         txtDetail4 = findViewById(R.id.textView17);
         txtDetail5 = findViewById(R.id.textView18);
 
-        txtBillId.setText("Bill ID : " + tempbill.getBillId());
-        txtBillDate.setText("Bill Date : " + tempbill.getBillDate());
-        txtBillType.setText("Bill Type : " + tempbill.getBillType());
-        txtBillAmount.setText("Bill Amount : " + tempbill.getTotalBillAmount());
+        txtDetail11 = findViewById(R.id.textView23);
+        txtDetail21 = findViewById(R.id.textView24);
+        txtDetail31 = findViewById(R.id.textView25);
+        txtDetail41 = findViewById(R.id.textView26);
+        txtDetail51 = findViewById(R.id.textView27);
+
+        txtBillId.setText(tempbill.getBillId());
+        txtBillDate.setText(tempbill.getBillDate());
+        txtBillType.setText(tempbill.getBillType());
+        txtBillAmount.setText(tempbill.getTotalBillAmount().toString());
 
         if(tempbill.getBillType().contains("Hydro")){
 
-            txtDetail1.setText("Agency Name : ");
-            txtDetail2.setText("Unit Consumed : ");
+            txtDetail1.setText("Agency Name");
+            txtDetail11.setText("Agency Name");
+
+            txtDetail2.setText("Unit Consumed");
+            txtDetail21.setText("Unit Consumed");
+
         } else if(tempbill.getBillType().contains("Internet")){
-            txtDetail1.setText("Provider Name : ");
-            txtDetail2.setText("Internet Usage : ");
+            txtDetail1.setText("Provider Name");
+            txtDetail11.setText("Provider Name");
+
+            txtDetail2.setText("Internet Usage");
+            txtDetail21.setText("Internet Usage");
+
         } else {
-            txtDetail1.setText("Manufacturer Name : ");
-            txtDetail2.setText("Plan Name : ");
-            txtDetail3.setText("Mobile Number : ");
-            txtDetail4.setText("Internet Usage : ");
-            txtDetail5.setText("Minutes Usage : ");
+            txtDetail1.setText("Manufacturer Name");
+            txtDetail11.setText("Manufacturer Name");
+
+            txtDetail2.setText("Plan Name");
+            txtDetail21.setText("Plan Name");
+
+            txtDetail3.setText("Mobile Number");
+            txtDetail31.setText("Mobile Number");
+
+            txtDetail4.setText("Internet Usage");
+            txtDetail41.setText("Internet Usage");
+
+            txtDetail5.setText("Minutes Usage");
+            txtDetail51.setText("Minutes Usage");
         }
     }
 }
