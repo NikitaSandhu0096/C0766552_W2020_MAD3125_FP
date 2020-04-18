@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.BillInfoActivity" />
+        <activity android:name=".ui.BillInfoActivity"
+            android:parentActivityName=".ui.ShowBillDetailsActivity"/>
         <activity
             android:name=".ui.ShowBillDetailsActivity"
             android:parentActivityName=".ui.CustomerListActivity" />
