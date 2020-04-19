@@ -31,6 +31,8 @@ public class BillInfoActivity extends AppCompatActivity {
     private TextView txtDetail41;
     private TextView txtDetail51;
 
+    private Bill tempbill;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,7 +41,7 @@ public class BillInfoActivity extends AppCompatActivity {
         ActionBar actBar = getSupportActionBar();
         actBar.setTitle("Bill's Information");
 
-        Bill tempbill = (Bill) getIntent().getSerializableExtra("bills");
+        tempbill = (Bill) getIntent().getSerializableExtra("bills");
 
         txtBillId = findViewById(R.id.textView19);
         txtBillDate = findViewById(R.id.textView20);
@@ -75,6 +77,7 @@ public class BillInfoActivity extends AppCompatActivity {
             txtDetail21.setText("Unit Consumed");
 
         } else if(tempbill.getBillType().contains("Internet")){
+
             txtDetail1.setText("Provider Name");
             txtDetail11.setText("Provider Name");
 
@@ -82,6 +85,7 @@ public class BillInfoActivity extends AppCompatActivity {
             txtDetail21.setText("Internet Usage");
 
         } else {
+            
             txtDetail1.setText("Manufacturer Name");
             txtDetail11.setText("Manufacturer Name");
 
