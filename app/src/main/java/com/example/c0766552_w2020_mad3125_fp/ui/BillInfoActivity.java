@@ -79,7 +79,7 @@ public class BillInfoActivity extends AppCompatActivity {
             txtDetail11.setText(hydro.getAgencyName());
 
             txtDetail2.setText("Unit Consumed");
-            txtDetail21.setText("Unit Consumed");
+            txtDetail21.setText(hydro.getUnitConsumed() + "");
 
         } else if(tempbill.getBillType().contains("Internet")){
 
@@ -89,7 +89,7 @@ public class BillInfoActivity extends AppCompatActivity {
             txtDetail11.setText(internet.getProviderName());
 
             txtDetail2.setText("Internet Usage");
-            txtDetail21.setText("Internet Usage");
+            txtDetail21.setText(internet.getInternetGBUsed() + " GB");
 
         } else {
 
@@ -102,13 +102,13 @@ public class BillInfoActivity extends AppCompatActivity {
             txtDetail21.setText(mobile.getPlanName());
 
             txtDetail3.setText("Mobile Number");
-            txtDetail31.setText("Mobile Number");
+            txtDetail31.setText(mobile.getMobileNumber() + "");
 
             txtDetail4.setText("Internet Usage");
-            txtDetail41.setText("Internet Usage");
+            txtDetail41.setText(mobile.getInternetGBUsed() + " GB");
 
             txtDetail5.setText("Minutes Usage");
-            txtDetail51.setText("Minutes Usage");
+            txtDetail51.setText(mobile.getMinuteUsed() + "");
         }
     }
 }
