@@ -94,6 +94,4 @@ public class Customer implements Serializable {
         fullName = firstName + " " + lastName;
         return fullName;
     }
-
-
 }

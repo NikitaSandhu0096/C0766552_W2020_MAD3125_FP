@@ -15,7 +15,6 @@ import com.example.c0766552_w2020_mad3125_fp.model.Customer;
 import com.example.c0766552_w2020_mad3125_fp.model.Internet;
 import com.google.android.material.textfield.TextInputEditText;
 
-import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;

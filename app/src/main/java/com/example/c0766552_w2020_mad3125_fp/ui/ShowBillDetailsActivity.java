@@ -87,16 +87,13 @@ public class ShowBillDetailsActivity extends AppCompatActivity {
                 Intent intent3 = new Intent(ShowBillDetailsActivity.this, AddNewHydroBillActivity.class);
                 intent3.putExtra("customer1", tempobj);
                 startActivity(intent3);
-                //  Toast.makeText(getApplicationContext(),"Item 1 Selected",Toast.LENGTH_LONG).show();
                 return true;
             case R.id.menu4:
-                //  Toast.makeText(getApplicationContext(),"Item 2 Selected",Toast.LENGTH_LONG).show();
                 AddNewMobileBillActivity.customer1 = tempobj;
                 Intent intent4 = new Intent(ShowBillDetailsActivity.this, AddNewMobileBillActivity.class);
                 startActivity(intent4);
                 return true;
             case R.id.menu5:
-                //  Toast.makeText(getApplicationContext(),"Item 2 Selected",Toast.LENGTH_LONG).show();
                 AddNewInternetBillActivity.customer1 = tempobj;
                 Intent intent5 = new Intent(ShowBillDetailsActivity.this, AddNewInternetBillActivity.class);
                 startActivity(intent5);
