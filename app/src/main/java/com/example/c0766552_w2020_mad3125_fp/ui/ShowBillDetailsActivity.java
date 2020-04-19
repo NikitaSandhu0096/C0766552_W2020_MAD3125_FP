@@ -17,7 +17,9 @@ import com.example.c0766552_w2020_mad3125_fp.model.Bill;
 import com.example.c0766552_w2020_mad3125_fp.model.Customer;
 import com.example.c0766552_w2020_mad3125_fp.util.DataStorage;
 
+import java.text.NumberFormat;
 import java.util.ArrayList;
+import java.util.Currency;
 
 public class ShowBillDetailsActivity extends AppCompatActivity {
 
@@ -52,13 +54,15 @@ public class ShowBillDetailsActivity extends AppCompatActivity {
         txtCustomerId.setText(tempobj.getCustomerId());
         txtFullName.setText(tempobj.getFullName());
         txtEmail.setText(tempobj.getEmail());
-        txtTotalAmountToPay.setText(tempobj.getTotalAmountToPay().toString());
+
+        NumberFormat numberFormat = NumberFormat.getCurrencyInstance();             //https://stackoverflow.com/questions/45592109/how-can-i-convert-numbers-to-currency-format-in-android
+        numberFormat.setMaximumFractionDigits(2);
+        numberFormat.setCurrency(Currency.getInstance("USD"));
+        txtTotalAmountToPay.setText(numberFormat.format(tempobj.getTotalAmountToPay()));
 
         bills = tempobj.getAllBills();
 
         rvBillsList = findViewById(R.id.rvBillsList);
-
-      //  billsInfo();
 
         billsAdapter = new BillListInfoActivity(bills);
         RecyclerView.LayoutManager mLayoutManager1 = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
@@ -67,12 +71,6 @@ public class ShowBillDetailsActivity extends AppCompatActivity {
 
         rvBillsList.setAdapter(billsAdapter);
     }
-
-//    private void billsInfo(){
-//        DataStorage.getInstance().loadDetails();
-//        //bills = new ArrayList<>(DataStorage.getInstance().getCustomer());
-
-//    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {         //https://javatpoint.com/android-option-menu-example

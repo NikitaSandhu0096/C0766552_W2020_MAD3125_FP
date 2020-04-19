@@ -20,8 +20,6 @@ public class Customer implements Serializable {
         this.lastName = lastName;
         this.fullName = calculateFullName();
         this.email = email;
-//        this.bills = bills;
-//        this.totalAmountToPay = totalAmountToPay;
     }
 
     public void addBill(String billId, Bill bill){

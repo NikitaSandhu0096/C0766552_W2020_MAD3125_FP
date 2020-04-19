@@ -9,6 +9,9 @@ import android.widget.TextView;
 import com.example.c0766552_w2020_mad3125_fp.R;
 import com.example.c0766552_w2020_mad3125_fp.model.Bill;
 
+import java.text.NumberFormat;
+import java.util.Currency;
+
 public class BillInfoActivity extends AppCompatActivity {
 
     private TextView txtBillId;
@@ -57,7 +60,11 @@ public class BillInfoActivity extends AppCompatActivity {
         txtBillId.setText(tempbill.getBillId());
         txtBillDate.setText(tempbill.getBillDate());
         txtBillType.setText(tempbill.getBillType());
-        txtBillAmount.setText(tempbill.getTotalBillAmount().toString());
+
+        NumberFormat numberFormat = NumberFormat.getCurrencyInstance();             //https://stackoverflow.com/questions/45592109/how-can-i-convert-numbers-to-currency-format-in-android
+        numberFormat.setMaximumFractionDigits(2);
+        numberFormat.setCurrency(Currency.getInstance("USD"));
+        txtBillAmount.setText(numberFormat.format(tempbill.getTotalBillAmount()));
 
         if(tempbill.getBillType().contains("Hydro")){
 

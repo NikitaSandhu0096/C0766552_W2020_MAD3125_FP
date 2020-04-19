@@ -60,13 +60,11 @@ public class LoginActivity extends AppCompatActivity {
                         editor.putString("email",email);
                         editor.putString("password",password);
                         editor.apply();
-                      //  Toast.makeText(LoginActivity.this, "Checked", Toast.LENGTH_SHORT).show();;
                         Intent intent = new Intent(LoginActivity.this, CustomerListActivity.class);
                         startActivity(intent);
                     }else {
                         editor.clear();
                         editor.apply();
-                     //   Toast.makeText(LoginActivity.this, "UnChecked", Toast.LENGTH_SHORT).show();;
                         Intent intent = new Intent(LoginActivity.this, CustomerListActivity.class);
                         startActivity(intent);
                     }

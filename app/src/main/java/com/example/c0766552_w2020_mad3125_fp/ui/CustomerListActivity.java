@@ -45,13 +45,7 @@ public class CustomerListActivity extends AppCompatActivity {
     }
 
     private void customersInfo(){
-        //DataStorage.getInstance().loadDetails();
-
         customers = new ArrayList<>(DataStorage.getInstance().getCustomer());
-
-//        customers.add(new Customer("C0001","Nikita","Sandhu","nsandhu@gmail.com"));
-//        customers.add(new Customer("C0002","Kashyap","Jhaveri","kjhaveri@yahoo.com"));
-//        customers.add(new Customer("C0003","Kamalpreet","Kaur","kkaur@yahoo.com"));
     }
 
     @Override
@@ -67,10 +61,8 @@ public class CustomerListActivity extends AppCompatActivity {
             case R.id.menu1:
                 Intent intent2 = new Intent(CustomerListActivity.this, AddNewCustomerActivity.class);
                 startActivity(intent2);
-              //  Toast.makeText(getApplicationContext(),"Item 1 Selected",Toast.LENGTH_LONG).show();
                 return true;
             case R.id.menu2:
-              //  Toast.makeText(getApplicationContext(),"Item 2 Selected",Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(CustomerListActivity.this, LoginActivity.class);
                 startActivity(intent);
                 return true;

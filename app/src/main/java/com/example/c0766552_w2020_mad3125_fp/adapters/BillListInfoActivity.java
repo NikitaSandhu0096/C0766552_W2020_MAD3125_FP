@@ -13,7 +13,9 @@ import com.example.c0766552_w2020_mad3125_fp.R;
 import com.example.c0766552_w2020_mad3125_fp.model.Bill;
 import com.example.c0766552_w2020_mad3125_fp.ui.BillInfoActivity;
 
+import java.text.NumberFormat;
 import java.util.ArrayList;
+import java.util.Currency;
 
 public class BillListInfoActivity extends RecyclerView.Adapter<BillListInfoActivity.BillViewHolder> {
     private ArrayList<Bill> billsArrayList;
@@ -35,7 +37,11 @@ public class BillListInfoActivity extends RecyclerView.Adapter<BillListInfoActiv
         Bill mBill = this.billsArrayList.get(position);
         holder.txtBillType.setText("Bill Type : " + mBill.getBillType());
         holder.txtBillDate.setText("Bill Date : " + mBill.getBillDate());
-        holder.txtBillAmount.setText("Bill Amount : " + mBill.getTotalBillAmount().toString());
+
+        NumberFormat numberFormat = NumberFormat.getCurrencyInstance();             //https://stackoverflow.com/questions/45592109/how-can-i-convert-numbers-to-currency-format-in-android
+        numberFormat.setMaximumFractionDigits(2);
+        numberFormat.setCurrency(Currency.getInstance("USD"));
+        holder.txtBillAmount.setText("Bill Amount : " + numberFormat.format(mBill.getTotalBillAmount()));
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -90,7 +90,6 @@ public class AddNewHydroBillActivity extends AppCompatActivity {
                 } else {
                     Hydro temphydro = new Hydro(hID, hBillDate, Double.parseDouble(hBillAmount), agencyName, Integer.parseInt(unitConsumed));
                     customer1.addBill(temphydro.getBillId(), temphydro);
-                    //Toast.makeText(AddNewHydroBillActivity.this,"Bill created", Toast.LENGTH_SHORT).show();
                     Intent hint = new Intent(AddNewHydroBillActivity.this, ShowBillDetailsActivity.class);
                     startActivity(hint);
                 }

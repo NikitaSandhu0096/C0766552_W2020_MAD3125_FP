@@ -38,7 +38,6 @@ public class CustomerListInfoActivity extends RecyclerView.Adapter<CustomerListI
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Customer cust = customersArrayList.get(position);
                 Intent sint = new Intent(holder.itemView.getContext(), ShowBillDetailsActivity.class);
 
                 ShowBillDetailsActivity.selectItem = position;          //https://stackoverflow.com/questions/54507274/recyclerview-get-the-selected-position-and-pass-the-position-to-another-activi
