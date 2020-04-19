@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.c0766552_w2020_mad3125_fp.R;
 import com.example.c0766552_w2020_mad3125_fp.model.Customer;
@@ -29,6 +31,8 @@ public class AddNewHydroBillActivity extends AppCompatActivity {
     private TextInputEditText edtAgencyName;
     private TextInputEditText edtUnitConsumed;
     private Button btnHSave;
+
+    public static Customer customer1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,7 +88,9 @@ public class AddNewHydroBillActivity extends AppCompatActivity {
                 } else if(unitConsumed.isEmpty()){
                     edtUnitConsumed.setError("Please enter Unit Consumed");
                 } else {
-                    Hydro hydro = new Hydro(hID,hBillDate,Double.parseDouble("hBillAmount"),agencyName,Integer.parseInt("unitConsumed"));
+                    Hydro hydro = new Hydro(hID, hBillDate, Double.parseDouble(hBillAmount), agencyName, Integer.parseInt(unitConsumed));
+                    customer1.addBill(hydro.getBillId(),  hydro);
+                    //Toast.makeText(AddNewHydroBillActivity.this,"Bill created", Toast.LENGTH_SHORT).show();
                     Intent hint = new Intent(AddNewHydroBillActivity.this, ShowBillDetailsActivity.class);
                     startActivity(hint);
                 }

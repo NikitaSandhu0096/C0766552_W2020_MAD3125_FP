@@ -32,6 +32,8 @@ public class ShowBillDetailsActivity extends AppCompatActivity {
 
     public static int selectItem = 0;
 
+    private Customer tempobj;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,7 +47,7 @@ public class ShowBillDetailsActivity extends AppCompatActivity {
         txtEmail = findViewById(R.id.textView7);
         txtTotalAmountToPay = findViewById(R.id.textView8);
 
-        Customer tempobj = DataStorage.getInstance().getCustomer().get(getIntent().getIntExtra("customerSelected",selectItem));
+        tempobj = DataStorage.getInstance().getCustomer().get(getIntent().getIntExtra("customerSelected",selectItem));
 
         txtCustomerId.setText(tempobj.getCustomerId());
         txtFullName.setText(tempobj.getFullName());
@@ -83,7 +85,9 @@ public class ShowBillDetailsActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
             case R.id.menu3:
+                AddNewHydroBillActivity.customer1 = tempobj;
                 Intent intent3 = new Intent(ShowBillDetailsActivity.this, AddNewHydroBillActivity.class);
+                intent3.putExtra("customer1", tempobj);
                 startActivity(intent3);
                 //  Toast.makeText(getApplicationContext(),"Item 1 Selected",Toast.LENGTH_LONG).show();
                 return true;
