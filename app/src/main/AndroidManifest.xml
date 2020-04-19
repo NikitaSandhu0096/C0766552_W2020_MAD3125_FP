@@ -9,16 +9,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.BillInfoActivity"/>
+        <activity android:name=".ui.BillInfoActivity"
+            android:parentActivityName=".ui.ShowBillDetailsActivity"/>
         <activity
             android:name=".ui.ShowBillDetailsActivity"
             android:parentActivityName=".ui.CustomerListActivity" />
         <activity
-            android:name=".ui.AddNewMobileBillActivity"/>
+            android:name=".ui.AddNewMobileBillActivity"
+            android:parentActivityName=".ui.ShowBillDetailsActivity" />
         <activity
-            android:name=".ui.AddNewInternetBillActivity"/>
+            android:name=".ui.AddNewInternetBillActivity"
+            android:parentActivityName=".ui.ShowBillDetailsActivity" />
         <activity
-            android:name=".ui.AddNewHydroBillActivity"/>
+            android:name=".ui.AddNewHydroBillActivity"
+            android:parentActivityName=".ui.ShowBillDetailsActivity" />
         <activity
             android:name=".ui.AddNewCustomerActivity"
             android:parentActivityName=".ui.CustomerListActivity" />

@@ -30,6 +30,8 @@ public class ShowBillDetailsActivity extends AppCompatActivity {
     private ArrayList<Bill> bills;
     private BillListInfoActivity billsAdapter;
 
+    public static int selectItem = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,7 +45,7 @@ public class ShowBillDetailsActivity extends AppCompatActivity {
         txtEmail = findViewById(R.id.textView7);
         txtTotalAmountToPay = findViewById(R.id.textView8);
 
-        Customer tempobj = DataStorage.getInstance().getCustomer().get(getIntent().getIntExtra("customerSelected",0));
+        Customer tempobj = DataStorage.getInstance().getCustomer().get(getIntent().getIntExtra("customerSelected",selectItem));
 
         txtCustomerId.setText(tempobj.getCustomerId());
         txtFullName.setText(tempobj.getFullName());

@@ -17,6 +17,7 @@ import java.util.ArrayList;
 
 public class CustomerListInfoActivity extends RecyclerView.Adapter<CustomerListInfoActivity.CustomerViewHolder> {
     private ArrayList<Customer> customersArrayList;
+    private int selectItem = 0;
 
     public CustomerListInfoActivity(ArrayList<Customer> customersArrayList) {
         this.customersArrayList = customersArrayList;
@@ -40,6 +41,9 @@ public class CustomerListInfoActivity extends RecyclerView.Adapter<CustomerListI
             public void onClick(View v) {
                 //Customer cust = customersArrayList.get(position);
                 Intent sint = new Intent(holder.itemView.getContext(), ShowBillDetailsActivity.class);
+
+                selectItem = position;          //https://stackoverflow.com/questions/54507274/recyclerview-get-the-selected-position-and-pass-the-position-to-another-activi
+                ShowBillDetailsActivity.selectItem = position;
                 sint.putExtra("customerSelected", position);
                 holder.itemView.getContext().startActivity(sint);
             }
