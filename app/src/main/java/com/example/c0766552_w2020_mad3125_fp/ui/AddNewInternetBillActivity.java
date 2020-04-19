@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.DatePicker;
 
 import com.example.c0766552_w2020_mad3125_fp.R;
+import com.example.c0766552_w2020_mad3125_fp.model.Customer;
 import com.example.c0766552_w2020_mad3125_fp.model.Internet;
 import com.google.android.material.textfield.TextInputEditText;
 
@@ -27,6 +28,8 @@ public class AddNewInternetBillActivity extends AppCompatActivity {
     private TextInputEditText edtProviderName;
     private TextInputEditText edtIInternetUsage;
     private Button btnISave;
+
+    public static Customer customer1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,7 +85,8 @@ public class AddNewInternetBillActivity extends AppCompatActivity {
                 } else if(iInternetUsage.isEmpty()){
                     edtIInternetUsage.setError("Please enter Internet Usage");
                 } else {
-                    Internet internet = new Internet(iID,iBillDate,Double.parseDouble("iBillAmount"),providerName,Integer.parseInt("iInternetUsage"));
+                    Internet tempinternet = new Internet(iID,iBillDate,Double.parseDouble(iBillAmount),providerName,Integer.parseInt(iInternetUsage));
+                    customer1.addBill(tempinternet.getBillId(), tempinternet);
                     Intent iint = new Intent(AddNewInternetBillActivity.this, ShowBillDetailsActivity.class);
                     startActivity(iint);
                 }

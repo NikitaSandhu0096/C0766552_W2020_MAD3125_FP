@@ -88,8 +88,8 @@ public class AddNewHydroBillActivity extends AppCompatActivity {
                 } else if(unitConsumed.isEmpty()){
                     edtUnitConsumed.setError("Please enter Unit Consumed");
                 } else {
-                    Hydro hydro = new Hydro(hID, hBillDate, Double.parseDouble(hBillAmount), agencyName, Integer.parseInt(unitConsumed));
-                    customer1.addBill(hydro.getBillId(),  hydro);
+                    Hydro temphydro = new Hydro(hID, hBillDate, Double.parseDouble(hBillAmount), agencyName, Integer.parseInt(unitConsumed));
+                    customer1.addBill(temphydro.getBillId(), temphydro);
                     //Toast.makeText(AddNewHydroBillActivity.this,"Bill created", Toast.LENGTH_SHORT).show();
                     Intent hint = new Intent(AddNewHydroBillActivity.this, ShowBillDetailsActivity.class);
                     startActivity(hint);
