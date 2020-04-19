@@ -61,6 +61,7 @@
             android:id="@+id/hydroBillAmountTextInputEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
             android:hint="Bill Amount" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -99,6 +100,7 @@
             android:id="@+id/hydroUnitConsumedTextInputEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="number"
             android:hint="Unit Consumed" />
     </com.google.android.material.textfield.TextInputLayout>
 
