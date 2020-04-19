@@ -46,9 +46,9 @@ public class BillListInfoActivity extends RecyclerView.Adapter<BillListInfoActiv
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               // Bill bill = billsArrayList.get(position);
+                Bill bill = billsArrayList.get(position);
                 Intent sint1 = new Intent(holder.itemView.getContext(), BillInfoActivity.class);
-                sint1.putExtra("bills", position);
+                sint1.putExtra("bills", bill);
                 holder.itemView.getContext().startActivity(sint1);
             }
         });

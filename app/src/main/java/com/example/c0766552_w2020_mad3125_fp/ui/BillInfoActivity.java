@@ -85,7 +85,7 @@ public class BillInfoActivity extends AppCompatActivity {
             txtDetail21.setText("Internet Usage");
 
         } else {
-            
+
             txtDetail1.setText("Manufacturer Name");
             txtDetail11.setText("Manufacturer Name");
 
