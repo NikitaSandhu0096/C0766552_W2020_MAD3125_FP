@@ -8,6 +8,9 @@ import android.widget.TextView;
 
 import com.example.c0766552_w2020_mad3125_fp.R;
 import com.example.c0766552_w2020_mad3125_fp.model.Bill;
+import com.example.c0766552_w2020_mad3125_fp.model.Hydro;
+import com.example.c0766552_w2020_mad3125_fp.model.Internet;
+import com.example.c0766552_w2020_mad3125_fp.model.Mobile;
 
 import java.text.NumberFormat;
 import java.util.Currency;
@@ -70,27 +73,33 @@ public class BillInfoActivity extends AppCompatActivity {
 
         if(tempbill.getBillType().contains("Hydro")){
 
+            Hydro hydro = (Hydro) tempbill;
+
             txtDetail1.setText("Agency Name");
-            txtDetail11.setText("Agency Name");
+            txtDetail11.setText(hydro.getAgencyName());
 
             txtDetail2.setText("Unit Consumed");
             txtDetail21.setText("Unit Consumed");
 
         } else if(tempbill.getBillType().contains("Internet")){
 
+            Internet internet = (Internet) tempbill;
+
             txtDetail1.setText("Provider Name");
-            txtDetail11.setText("Provider Name");
+            txtDetail11.setText(internet.getProviderName());
 
             txtDetail2.setText("Internet Usage");
             txtDetail21.setText("Internet Usage");
 
         } else {
 
+            Mobile mobile = (Mobile) tempbill;
+
             txtDetail1.setText("Manufacturer Name");
-            txtDetail11.setText("Manufacturer Name");
+            txtDetail11.setText(mobile.getMobileManufacturer());
 
             txtDetail2.setText("Plan Name");
-            txtDetail21.setText("Plan Name");
+            txtDetail21.setText(mobile.getPlanName());
 
             txtDetail3.setText("Mobile Number");
             txtDetail31.setText("Mobile Number");
