@@ -41,9 +41,6 @@ public class BillInfoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bill_info);
 
-        ActionBar actBar = getSupportActionBar();
-        actBar.setTitle("Bill's Information");
-
         tempbill = (Bill) getIntent().getSerializableExtra("bills");
 
         txtBillId = findViewById(R.id.textView19);
@@ -73,6 +70,9 @@ public class BillInfoActivity extends AppCompatActivity {
 
         if(tempbill.getBillType().contains("Hydro")){
 
+            ActionBar actBar = getSupportActionBar();
+            actBar.setTitle("Hydro Bill's Information");
+
             Hydro hydro = (Hydro) tempbill;
 
             txtDetail1.setText("Agency Name");
@@ -83,6 +83,9 @@ public class BillInfoActivity extends AppCompatActivity {
 
         } else if(tempbill.getBillType().contains("Internet")){
 
+            ActionBar actBar = getSupportActionBar();
+            actBar.setTitle("Internet Bill's Information");
+
             Internet internet = (Internet) tempbill;
 
             txtDetail1.setText("Provider Name");
@@ -92,6 +95,9 @@ public class BillInfoActivity extends AppCompatActivity {
             txtDetail21.setText(internet.getInternetGBUsed() + " GB");
 
         } else {
+
+            ActionBar actBar = getSupportActionBar();
+            actBar.setTitle("Mobile Bill's Information");
 
             Mobile mobile = (Mobile) tempbill;
 
