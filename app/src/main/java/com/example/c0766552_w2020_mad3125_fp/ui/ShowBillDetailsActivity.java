@@ -85,7 +85,6 @@ public class ShowBillDetailsActivity extends AppCompatActivity {
             case R.id.menu3:
                 AddNewHydroBillActivity.customer1 = tempobj;
                 Intent intent3 = new Intent(ShowBillDetailsActivity.this, AddNewHydroBillActivity.class);
-                intent3.putExtra("customer1", tempobj);
                 startActivity(intent3);
                 return true;
             case R.id.menu4:
