@@ -2,6 +2,11 @@
 
 ## Nikita Sandhu
 
+### Billing System
+- A Billing system is created to keep a track of the bills of particular users.
+- New Bills can be added that can be of Hydro, Mobile and Internet type.
+- New Customers can be added.
+
 ### References
 - https://www.flaticon.com/free-icon/bill_950258?term=bill&page=1&position=29
 - https://www.youtube.com/watch?v=2oGlVCn4bVo
